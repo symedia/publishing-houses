@@ -135,13 +135,13 @@ class PH_Post_types {
 					'capability_type'     => 'publishing_house',
                     'capabilities' => array(
                         'edit_post' => 'edit_publishing_house',
-                        'edit_others_posts' => 'edit_other_publishing_house',
-                        'publish_posts' => 'publish_publishing_house',
+                        'edit_others_posts' => 'edit_other_publishing_houses',
+                        'publish_posts' => 'publish_publishing_houses',
                         'read_post' => 'read_publishing_house',
-                        'read_private_posts' => 'read_private_publishing_house',
-                        'delete_post' => 'delete_publishing_house'
+                        'read_private_posts' => 'read_private_publishing_houses',
+                        'delete_post' => 'delete_publishing_house',
                     ),
-					'map_meta_cap'        => true,
+					'map_meta_cap'        => false,
 					'publicly_queryable'  => true,
 					'exclude_from_search' => false,
 					'hierarchical'        => false, // Hierarchical causes memory issues - WP loads all records!

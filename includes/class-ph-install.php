@@ -103,10 +103,11 @@ class PH_Install {
 				"edit_{$capability_type}",
 				"read_{$capability_type}",
 				"delete_{$capability_type}",
-				"edit_others_{$capability_type}",
-				"publish_{$capability_type}",
-				"read_private_{$capability_type}",
-				"create_posts{$capability_type}",
+
+				"edit_others_{$capability_type}s",
+				"publish_{$capability_type}s",
+				"read_private_{$capability_type}s",
+				"create_posts{$capability_type}s",
 
 				// Terms
 				"manage_{$capability_type}_terms",
