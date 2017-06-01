@@ -7,9 +7,7 @@
  * Author: Gregory V Lominoga (Gromodar)
  * Author URI: http://symedia.ru
  * E-Mail: info@symedia.ru
- * GitHub Branch:     master
  * GitHub Plugin URI: https://github.com/symedia/publishing-houses
- * @package PublishingHouses
  */
 
 /*  Copyright 2017 Gregory V Lominoga (email: lominogagv@gmail.com)
