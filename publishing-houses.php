@@ -3,7 +3,7 @@
 Plugin Name: Publishing houses
 Plugin URI: https://github.com/symedia/publishing-houses
 Description: Publishing houses for shop of comics.
-Version: 1.0
+Version: 1.1
 Author: Gregory V Lominoga (Gromodar)
 Author URI: http://symedia.ru
 E-Mail: info@symedia.ru
