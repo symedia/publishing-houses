@@ -28,7 +28,6 @@ class PH_Install {
 	 * Install WC.
 	 */
 	public static function install() {
-		global $wpdb;
 
 		if ( ! is_blog_installed() ) {
 			return;
@@ -41,8 +40,8 @@ class PH_Install {
 		self::create_capabilities();
 
 		// Register post types
-		PH_Post_types::register_post_types();
-		PH_Post_types::register_taxonomies();
+		//PH_Post_types::register_post_types();
+		//PH_Post_types::register_taxonomies();
 
 		self::create_terms();
 
@@ -67,17 +66,17 @@ class PH_Install {
 			$wp_roles = new WP_Roles();
 		}
 
-		add_role( 'publishing_house', __( 'Publishing house', 'publishing_houses' ),
-                array(
-			'read' 					=> true,
-		) );
+//		add_role( 'publishing_house_role', __( 'Publishing house', 'publishing_houses' ),
+//                array(
+//			'read' 					=> true,
+//		) );
 
 		$capabilities = self::get_capabilities();
 
 		foreach ( $capabilities as $cap_group ) {
 			foreach ( $cap_group as $cap ) {
 				$wp_roles->add_cap( 'administrator', $cap );
-				$wp_roles->add_cap( 'publishing_house', $cap );
+				//$wp_roles->add_cap( 'publishing_house_role', $cap );
 			}
 		}
 	}

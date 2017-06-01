@@ -8,12 +8,16 @@
  * E-Mail: info@symedia.ru
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class PH_Admin {
 
 
     public function __construct() {
 
-        add_action( 'admin_init', array( $this, 'woo_check' ) );
+        //add_action( 'admin_init', array( $this, 'woo_check' ) );
 
 		add_filter( 'manage_publishing_house_posts_columns', array( $this, 'publishing_houses_columns' ) );
 		add_filter( 'manage_product_posts_columns', array( $this, 'woo_product_columns' ) );
@@ -53,11 +57,11 @@ class PH_Admin {
 
         if ( $column === 'publishing_house' ) {
 
-            $publishing_house_id = get_post_meta($post->ID, 'publishing_house', true);
+            $publishing_house_id = get_post_meta($the_product->get_id(), '_publishing_houses', true);
 
             $publishing_house_object = get_post($publishing_house_id);
 
-            echo $publishing_house_object->post_title;
+            echo  $publishing_house_object->post_title;
         }
     }
 

@@ -63,33 +63,20 @@ class PH_Post_types {
 						'new_item_name'     => __( 'New city name', 'publishing_houses' ),
 						'not_found'         => __( 'No cities found', 'publishing_houses' ),
 					),
-				'show_ui'               => true,
-				'query_var'             => true,
-				'rewrite'          => array(
-					'slug'         => 'ph_city',
-					'with_front'   => true,
-					'hierarchical' => false,
-				),
-			) )
+                    'show_ui'               => true,
+                    'query_var'             => true,
+                    'rewrite'          => array(
+                        'slug'         => 'ph_city',
+                        'with_front'   => true,
+                        'hierarchical' => false,
+                    ),
+			)   )
 		);
 
         add_action( 'save_post_publishing_house', array( 'PH_meta_boxes', 'save_single_meta_box' ) );
 
 		do_action( 'publishing_houses_after_register_taxonomy' );
 	}
-
-    private function taxonomy_cities_meta_box() {
-        $terms = get_terms( 'publishing_houses_cities', array( 'hide_empty' => false ) );
-        $post  = get_post();
-        $city = wp_get_object_terms( $post->ID, 'publishing_houses_cities', array( 'orderby' => 'term_id', 'order' => 'ASC' ) );
-        $name  = '';
-
-        if ( ! is_wp_error( $rating ) ) {
-            if ( isset( $rating[0] ) && isset( $rating[0]->name ) ) {
-                $name = $rating[0]->name;
-            }
-        }
-    }
 
 	/**
 	 * Register post types.

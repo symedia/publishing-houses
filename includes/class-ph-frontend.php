@@ -23,6 +23,8 @@ class PH_Frontend {
 
     public function page_template( $page_template )
     {
+        //global $wp_query;
+        //var_dump( $wp_query );
         if ( is_post_type_archive( 'publishing_house' ) ) {
             $page_template = PH_ABSPATH . '/templates/publishing-houses.php';
         }

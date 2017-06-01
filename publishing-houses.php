@@ -150,8 +150,6 @@ final class PublishingHouses {
     	include_once( PH_ABSPATH . 'includes/class-ph-frontend.php' );
     }
 
-
-
 }
 
 endif;
