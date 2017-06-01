@@ -13,11 +13,14 @@ class PH_Admin {
 
     public function __construct() {
 
+        add_action( 'admin_init', 'woo_check' );
+
 		add_filter( 'manage_publishing_house_posts_columns', array( $this, 'publishing_houses_columns' ) );
 		add_filter( 'manage_product_posts_columns', array( $this, 'woo_product_columns' ) );
 
 		add_action( 'manage_publishing_house_posts_custom_column', array( $this, 'render_publishing_houses_columns' ), 2 );
 		add_action( 'manage_product_posts_custom_column', array( $this, 'render_woo_product_columns' ), 2 );
+
     }
 
     public function woo_product_columns( $existing_columns ) {
@@ -101,6 +104,16 @@ class PH_Admin {
             echo $products_objects_array->found_posts;
         }
 	}
+
+    public function woo_check() {
+        if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+            add_action('admin_notices', function() {
+                ?>
+                <div class="error"> <p>Error! Please, activate Woocommerce plugin for work with Publishing houses plugin!</p></div>
+                <?php
+            } );
+        }
+    }
 
 }
 
