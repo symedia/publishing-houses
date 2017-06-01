@@ -1,1 +1,1 @@
-# publishing-houses
+# Publishing houses for woocomerce
