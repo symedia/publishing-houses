@@ -133,6 +133,15 @@ class PH_Post_types {
 					'public'              => false,
 					'show_ui'             => true,
 					'capability_type'     => 'publishing_house',
+                    'capabilities' => array(
+                        'edit_post' => 'edit_publishing_house',
+                        'edit_posts' => 'edit_publishing_house',
+                        'edit_others_posts' => 'edit_other_publishing_house',
+                        'publish_posts' => 'publish_publishing_house',
+                        'read_post' => 'read_publishing_house',
+                        'read_private_posts' => 'read_private_publishing_house',
+                        'delete_post' => 'delete_publishing_house'
+                    ),
 					'map_meta_cap'        => true,
 					'publicly_queryable'  => true,
 					'exclude_from_search' => false,
