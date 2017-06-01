@@ -13,7 +13,7 @@ class PH_Admin {
 
     public function __construct() {
 
-        add_action( 'admin_init', 'woo_check' );
+        add_action( 'admin_init', array( $this, 'woo_check' ) );
 
 		add_filter( 'manage_publishing_house_posts_columns', array( $this, 'publishing_houses_columns' ) );
 		add_filter( 'manage_product_posts_columns', array( $this, 'woo_product_columns' ) );
