@@ -40,8 +40,8 @@ class PH_Install {
 		self::create_capabilities();
 
 		// Register post types
-		//PH_Post_types::register_post_types();
-		//PH_Post_types::register_taxonomies();
+		PH_Post_types::register_post_types();
+		PH_Post_types::register_taxonomies();
 
 		self::create_terms();
 
